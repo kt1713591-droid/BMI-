@@ -1,0 +1,34 @@
+def calc_bmi(weight, height):
+    bmi = weight / (height * height)
+    return bmi
+
+def bmi_status(bmi):
+    if bmi < 18.5:
+        return "Underweight"
+    elif bmi < 25:
+        return "Normal"
+    elif bmi < 30:
+        return "Overweight"
+    else:
+        return "Obese"
+
+def print_bmi(name, weight, height):
+    bmi = calc_bmi(weight, height)
+    st = bmi_status(bmi)
+
+    print("================================")
+    print("BMI REPORT")
+    print("Name =", name)
+    print("--------------------------------")
+    print("Weight =", weight)
+    print("Height =", height)
+    print("BMI =", bmi)
+    print("Status =", st)
+    print("================================")
+
+names = ["Ravi Sharma", "Neha Singh", "Aditya Verma"]
+weights = [72, 55, 90]
+heights = [1.75, 1.60, 1.82]
+
+for i in range(len(names)):
+    print_bmi(names[i], weights[i], heights[i])
